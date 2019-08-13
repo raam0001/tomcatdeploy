@@ -1,0 +1,27 @@
+version: 0.0
+os: linux
+files:
+   - source: /HelloWorld.java
+     destination: /usr/local/tomcat7/webapps/hello/WEB-INF/classes/
+   - source: /web.xml
+     destination: /usr/local/tomcat7/webapps/hello/WEB-INF/
+permissions:
+   - object: /usr/local/tomcat7/webapps/hello/
+     pattern: "**"
+     owner: root
+     group: root
+     mode: 755
+     type:
+       - file
+hooks:
+   BeforeInstall:
+    - location: scripts/installtomcat.sh
+      runas: root
+   AfterInstall:
+    - location: scripts/starttomcat.sh
+      runas: root
+   ValidateService:
+    - location: scripts/healthchcek.sh
+      runas: root
+      timeout: 120
+  
