@@ -6,7 +6,7 @@ sudo yum install java-1.8.0-openjdk-devel.x86_64 -y
 cd /opt
 wget http://mirrors.estointernet.in/apache/tomcat/tomcat-7/v7.0.96/bin/apache-tomcat-7.0.96.tar.gz
 tar -xvf apache-tomcat-7.0.96.tar.gz
-mv apache-tomcat-7.0.85 /usr/local/tomcat7
+mv apache-tomcat-7.0.96 /usr/local/tomcat7
 JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk
 export $JAVA_HOME
 rm -rf /usr/local/tomcat7/webapps/hello/*
